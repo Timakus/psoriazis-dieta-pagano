@@ -8,7 +8,7 @@
 - `js/script.js` - JavaScript функционалност
 
 ## Deploy
-Сайтът е хостван на Netlify: [paganodiet.netlify.app]
+Сайтът е хостван на Netlify: [https://psoriazis-dieta-pagano.eu/]
 
 ## Автор
 Крис Маринов
