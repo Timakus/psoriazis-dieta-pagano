@@ -24,17 +24,17 @@ body {
 
 /* Site Title в header */
 .site-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    margin-bottom: 10px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    display: block;
-    transition: opacity 0.3s;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: opacity 0.3s;
 }
 
 .site-title:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 header {
@@ -421,18 +421,30 @@ textarea {
 }
 
 .catalog h2 {
-  color: #333;
+  color: #6F00FF;
   margin-bottom: 25px;
   font-size: clamp(1.3rem, 3vw, 1.6rem);
 }
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 20px;
 }
 
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  /* ПРОМЕНИ ОТ 768px НА 650px */
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .catalog-card {
   background: white;
   border: 1px solid #e0e0e0;
@@ -475,17 +487,6 @@ textarea {
   font-size: 0.9rem;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .catalog-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .catalog {
-    padding: 20px 15px;
-  }
-}
-
 /* BREADCRUMBS */
 .breadcrumbs {
   padding: 15px 20px;
@@ -508,11 +509,19 @@ textarea {
   margin: 0 8px;
 }
 
+.archive-layout {
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
 /* PRODUCT DETAIL PAGE - компактен дизайн */
 .product-detail {
   padding: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .product-header {
@@ -571,7 +580,7 @@ textarea {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: #667eea;
+  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -579,7 +588,6 @@ textarea {
 }
 
 .back-button:hover {
-  background: #5568d3;
   transform: translateX(-5px);
 }
 
@@ -605,7 +613,7 @@ textarea {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 24px;
-  background: #667eea;
+  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -613,7 +621,6 @@ textarea {
 }
 
 .back-button:hover {
-  background: #5568d3;
   transform: translateX(-5px);
 }
 
@@ -629,231 +636,261 @@ textarea {
 
 /* TABLE OF CONTENTS */
 .table-of-contents {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 .table-of-contents h3 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .table-of-contents ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .table-of-contents li {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .table-of-contents a {
-    color: #667eea;
-    text-decoration: none;
-    padding: 5px 10px;
-    display: block;
-    border-radius: 5px;
-    transition: all 0.2s;
+  color: #667eea;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  border-radius: 5px;
+  transition: all 0.2s;
 }
 
 .table-of-contents a:hover {
-    background: #667eea;
-    color: white;
+  background: #667eea;
+  color: white;
 }
 
 /* Smooth scroll */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Offset за header при anchor scroll */
 section[id] {
-    scroll-margin-top: 20px;
+  scroll-margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-    .table-of-contents {
-        padding: 15px;
-        margin: 15px;
-    }
+  .table-of-contents {
+    padding: 15px;
+    margin: 15px;
+  }
 }
 
 /* H1 вместо H2 */
 .product-detail h1 {
-    font-size: 1.8rem;
-    color: #333;
-    margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
 }
 
 /* TOC под заглавието */
 .table-of-contents {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
 }
 
 /* Indent за H3 в TOC */
 .table-of-contents ul ul {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 @media (max-width: 768px) {
-    .product-detail h1 {
-        font-size: 1.5rem;
-    }
+  .product-detail h1 {
+    font-size: 1.5rem;
+  }
 }
 
 .table-of-contents {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fafafa;
 }
 
 .table-of-contents h3 {
-    margin: 0 0 15px 0;
-    text-align: center;
+  margin: 0 0 15px 0;
+  text-align: center;
 }
 
 .toc-read-more,
 .toc-hide {
-    display: block;
-    margin: 0 auto 15px auto;
-    padding: 8px 20px;
-    background: #f0f0f0;
-    border: 1px solid #d0d0d0;
-    border-radius: 6px;
-    color: #2c5f2d;
-    text-align: center;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    width: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+  padding: 8px 20px;
+  background: #f0f0f0;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  color: #2c5f2d;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  width: auto;
 }
 
 .toc-hide {
-    margin-top: 15px;
-    margin-bottom: 0;
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 .toc-read-more:hover,
 .toc-hide:hover {
-    background: #e0e0e0;
-    border-color: #b0b0b0;
-    transform: translateY(-1px);
+  background: #e0e0e0;
+  border-color: #b0b0b0;
+  transform: translateY(-1px);
 }
 
 .toc-read-more:active,
 .toc-hide:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 #toc-list {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* FAQ СЕКЦИЯ */
-.faq-section {
+/*.faq-section {
     background: #f8f9fa;
     padding: 30px 20px;
     margin: 30px 0;
     border-radius: 12px;
     border: 1px solid #e9ecef;
-}
+}*/
 
 .faq-section h2 {
-    color: #333;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  background: #f8f9fa;
+  padding: 5px 10px;
+  margin: 30px 0;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
 }
 
 .faq-item {
-    margin-bottom: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    background: white;
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
 }
 
 .faq-question {
-    width: 100%;
-    padding: 18px 20px;
-    background: white;
-    border: none;
-    text-align: left;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s ease;
-    font-family: inherit;
+  width: 100%;
+  padding: 10px 10px;
+  background: white;
+  border: none;
+  text-align: left;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  font-family: inherit;
 }
 
 .faq-question:hover {
-    background: #f8f9fa;
+  background: #f8f9fa;
 }
 
 .faq-question.active {
-    background: #667eea;
-    color: white;
+  background: #6101d7;
+  color: white;
 }
 
 .faq-arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    margin-left: 10px;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
 .faq-arrow.rotated {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background: #fafafa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: #fafafa;
 }
 
 .faq-answer.open {
-    max-height: 500px;
-    padding: 20px;
+  max-height: 500px;
+  padding: 20px;
 }
 
 .faq-answer p {
-    margin: 0;
-    color: #555;
-    line-height: 1.6;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Mobile оптимизация */
 @media (max-width: 768px) {
-    .faq-section {
+  /*.faq-section {
         padding: 20px 15px;
         margin: 20px 0;
-    }
-    
-    .faq-question {
-        padding: 15px;
-        font-size: 1rem;
-    }
-    
-    .faq-answer.open {
-        padding: 15px;
-    }
+    }*/
+
+  .faq-question {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .faq-answer.open {
+    padding: 15px;
+  }
+}
+
+/* БУТОН ЗА "Виж всички статии" */
+.catalog-view-all-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.catalog-view-all-btn:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .catalog-view-all-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
 }
