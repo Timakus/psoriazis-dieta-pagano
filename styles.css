@@ -23,25 +23,76 @@ body {
 }
 
 /* Site Title в header */
-.site-title {
+/*.site-title {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   margin-bottom: 10px;
   font-weight: 700;
-  color: white;
+  color: #fff !important;
   text-decoration: none;
   display: block;
   transition: opacity 0.3s;
-}
+}*/
 
 .site-title:hover {
   opacity: 0.9;
 }
 
 header {
-  background: linear-gradient(135deg, #1c5284 0%, #39e240 100%);
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+              url('img/pagano-hero-header.webp');
+  background-size: cover;
+  background-position: center;
   color: white;
-  padding: 30px 20px;
+  padding: 60px 20px;
   text-align: center;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.site-title {
+  font-size: clamp(1rem, 6vw, 3.5rem);
+  margin-bottom: 15px;
+  font-weight: 900;
+  color: #fff !important;
+  text-decoration: none;
+  display: block;
+  transition: opacity 0.3s;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+}
+
+header p {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  opacity: 0.95;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 40px 15px;
+    min-height: 150px;
+  }
 }
 
 header h1 {
@@ -421,7 +472,7 @@ textarea {
 }
 
 .catalog h2 {
-  color: #6F00FF;
+  color: #6f00ff;
   margin-bottom: 25px;
   font-size: clamp(1.3rem, 3vw, 1.6rem);
 }
@@ -580,7 +631,7 @@ textarea {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -613,7 +664,7 @@ textarea {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -874,7 +925,7 @@ section[id] {
 .catalog-view-all-btn {
   display: inline-block;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #6F00FF 0%, #3B0270 100%);
+  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
   color: white;
   text-decoration: none;
   border-radius: 10px;
@@ -894,3 +945,116 @@ section[id] {
     font-size: 1rem;
   }
 }
+
+/* ОБНОВЕН КАТАЛОГ С ИМИДЖИ */
+.catalog-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0; /* Променено от 25px */
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* За да работи border-radius на image */
+}
+
+.catalog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* НОВА СЕКЦИЯ ЗА ИМИДЖ С OVERLAY */
+.catalog-image {
+  width: 100%;
+  height: 100px; /* Увеличаваме малко за по-добро spacing */
+  overflow: hidden;
+  background: #f0f0f0;
+  position: relative;
+  display: flex;
+  align-items: center; /* Центрирано вертикално */
+  justify-content: left; /* Центрирано хоризонтално */
+}
+
+.catalog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.catalog-card:hover .catalog-image img {
+  transform: scale(1.05);
+}
+
+/* ТЪМЕН OVERLAY */
+.catalog-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Еднороден тъмен overlay */
+  z-index: 1;
+}
+
+/* ЗАГЛАВИЕ ЦЕНТРИРАНО В СРЕДАТА НА ИМИДЖА */
+.catalog-card h3 {
+  font-size: 1.3rem;
+  margin: 20px; /* Margin от всички страни */
+  color: white;
+  font-weight: 900; /* По-bold */
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  text-transform: uppercase; /* Главни букви */
+  letter-spacing: 2px; /* Леко намалено за по-добра четливост */
+  line-height: 1.2;
+}
+
+.catalog-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 15px 0 15px;
+  flex-grow: 1;
+  padding: 0 20px; /* left right */
+}
+
+.catalog-arrow {
+  color: #667eea;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0 20px 20px 20px; /* top right bottom left */
+}
+
+/* СКРИВАМЕ СТАРАТА ИКОНА */
+.catalog-icon {
+  display: none;
+}
+
+/* RESPONSIVE ПОВЕДЕНИЕ */
+@media (max-width: 768px) {
+  .catalog-image {
+    height: 100px; /* По-малка височина на mobile */
+  }
+
+  .catalog-card h3 {
+    padding: 0px 15px 0 15px;
+    font-size: 1.1rem;
+  }
+
+  .catalog-card p {
+    padding: 0 15px;
+  }
+
+  .catalog-arrow {
+    padding: 0 15px 15px 15px;
+  }
+}
+
