@@ -315,7 +315,7 @@ textarea {
 }
 
 .resources h2 {
-  color: #667eea;
+  color: #553800;
   margin-bottom: 15px;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
@@ -532,7 +532,7 @@ textarea {
 }
 
 .catalog h2 {
-  color: #6f00ff;
+  color: #553800;
   margin-bottom: 25px;
   font-size: clamp(1.3rem, 3vw, 1.6rem);
 }
@@ -691,10 +691,11 @@ textarea {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
-  color: white;
+  background: #ffa800;
+  box-shadow: 9px 10px 8px -14px #000;
+  color: #000000;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s;
 }
 
@@ -724,8 +725,9 @@ textarea {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
-  color: white;
+  background: #ffa800;
+  box-shadow: 9px 10px 8px -13px #000;
+  color: #000;
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s;
@@ -930,7 +932,7 @@ section[id] {
 }
 
 .faq-question.active {
-  background: #6101d7;
+  background: #ffa800;
   color: white;
 }
 
@@ -984,15 +986,15 @@ section[id] {
 /* БУТОН ЗА "Виж всички статии" */
 .catalog-view-all-btn {
   display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(135deg, #6f00ff 0%, #3b0270 100%);
-  color: white;
+  padding: 12px 24px;
+  background: #ffa800;
+  color: #000000;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 9px 10px 8px -14px #000;
 }
 
 .catalog-view-all-btn:hover {
