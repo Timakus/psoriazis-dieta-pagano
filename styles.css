@@ -119,6 +119,7 @@ textarea {
   font-family: inherit;
 }
 
+/* Основни стилове за таб бутоните */
 .tab-button {
   flex: 1 1 auto;
   min-width: 150px;
@@ -130,17 +131,76 @@ textarea {
   cursor: pointer;
   transition: all 0.3s;
   color: #666;
+  position: relative;
 }
 
-.tab-button:hover {
-  background: #e9ecef;
+/* Hover ефекти - само текст с градиент */
+.tab-button:nth-child(1):hover {
+  background: linear-gradient(135deg, #000000 0%, #0f9b0f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.tab-button.active {
-  background: white;
-  color: #667eea;
-  border-bottom: 3px solid #667eea;
+.tab-button:nth-child(2):hover {
+  background: linear-gradient(135deg, #000000 0%, #757f9a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.tab-button:nth-child(3):hover {
+  background: linear-gradient(135deg, #000000 0%, #e73827 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Active състояния - текст с градиент + градиентна долна линия */
+.tab-button:nth-child(1).active {
+  background: linear-gradient(135deg, #000000 0%, #0f9b0f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, #000000 0%, #0f9b0f 100%) 1;
   margin-bottom: -3px;
+}
+
+.tab-button:nth-child(2).active {
+  background: linear-gradient(135deg, #000000 0%, #757f9a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, #000000 0%, #757f9a 100%) 1;
+  margin-bottom: -3px;
+}
+
+.tab-button:nth-child(3).active {
+  background: linear-gradient(135deg, #000000 0%, #e73827 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(135deg, #000000 0%, #e73827 100%) 1;
+  margin-bottom: -3px;
+}
+
+/* Hover за фона остава неутрален */
+.tab-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Премахваме старото active поведение */
+.tab-button.active {
+  background-color: white;
 }
 
 .tab-content {
