@@ -166,7 +166,7 @@ textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  border-bottom: 3px solid;
+  border-bottom: 5px solid;
   border-image: linear-gradient(135deg, #000000 0%, #0f9b0f 100%) 1;
   margin-bottom: -3px;
 }
@@ -177,7 +177,7 @@ textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  border-bottom: 3px solid;
+  border-bottom: 5px solid;
   border-image: linear-gradient(135deg, #000000 0%, #757f9a 100%) 1;
   margin-bottom: -3px;
 }
@@ -188,7 +188,7 @@ textarea {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  border-bottom: 3px solid;
+  border-bottom: 5px solid;
   border-image: linear-gradient(135deg, #000000 0%, #e73827 100%) 1;
   margin-bottom: -3px;
 }
